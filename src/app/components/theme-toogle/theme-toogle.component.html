@@ -1,0 +1,7 @@
+<app-tooltip #tt [text]="('themeToggle.tooltip' | translate)" position="top">
+    <button class="theme-toggle" id="theme-toggle"
+            (click)="toggleTheme(); tt.hide()">
+      <span *ngIf="!isDarkMode" class="icon">	&#9728;</span>
+      <span *ngIf="isDarkMode" class="icon">&#9789;</span>
+    </button>
+  </app-tooltip>

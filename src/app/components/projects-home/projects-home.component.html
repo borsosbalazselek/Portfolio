@@ -1,0 +1,13 @@
+<h2>{{ 'projects.title' | translate }}</h2>
+
+<div class="projects-grid">
+  <div class="project-card" *ngFor="let project of projects"  data-aos="zoom-in">
+    <img [src]="project.image" alt="Project image">
+    <h3>{{ project.title | translate }}</h3>
+    <p class="header_p">{{ project.description | translate }}</p>
+
+  </div>
+</div>
+<div class="project-button-container">
+    <a [routerLink]="['/projects']" class="project-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+  </div>

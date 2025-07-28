@@ -1,0 +1,121 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  animation: fadeInBackground 0.3s ease forwards;
+}
+
+/* Fade animáció a háttérre */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal ablak */
+.modal-lang {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0077cc;
+  padding: 2rem 1.5rem;
+  
+  z-index: 999;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 90%;
+  max-width: 250px;
+  color: white;
+  animation: fadeInModal 0.4s ease forwards;
+  position: fixed;
+}
+
+/* Modal megjelenési animáció */
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Modal cím */
+.modal-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Nyelv opciók */
+.lang-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lang-option {
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: popIn 1.2s ease forwards;
+  box-shadow: 0 8px 16px rgb(0, 0, 0);
+}
+
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Bezáró gomb */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #aee0ff;
+}
+
+.selectimage {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+.selectimage:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

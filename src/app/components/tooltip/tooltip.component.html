@@ -1,0 +1,11 @@
+<div class="tooltip-trigger"
+     [ngClass]="position"
+     (mouseenter)="toggleVisibility(true)"
+     (mouseleave)="toggleVisibility(false)"
+     (focusin)="toggleVisibility(true)"
+     (focusout)="toggleVisibility(false)">
+  <ng-content></ng-content>
+  <span class="tooltip-text" [class.visible]="show">
+    {{ text }}
+  </span>
+</div>

@@ -1,0 +1,27 @@
+<section id="contact">
+    <div class="contact-infos">
+        <h2 class="contact-title">{{ 'contact.title' | translate }}</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p><strong>{{ 'contact.email' | translate }}: </strong><a class="header_p" href="mailto:borsosbalazs1979@gmail.com">{{ 'contact.emailhome' | translate }}</a></p>
+                <p><strong>{{ 'contact.phone' | translate }}: </strong><a class="header_p">{{ 'contact.phonehome' | translate }}</a></p>
+                <p><strong>{{ 'contact.address' | translate }}: </strong><a class="header_p">{{ 'contact.addresshome' | translate }}</a></p>
+            </div>
+        </div>
+    </div>
+
+      <!-- JOBB OLDAL: Térkép -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Debrecen,+Hungary&output=embed"
+          width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+
+
+    <div class="contact-button-container">
+        <a [routerLink]="['/contact']" class="contact-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+    </div>
+
+  </section>

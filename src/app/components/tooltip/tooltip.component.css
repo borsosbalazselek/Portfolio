@@ -1,0 +1,63 @@
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-trigger {
+    position: relative;
+    display: inline-block;
+    overflow: visible; /* biztosan engedje kilógni */
+    transform: none !important; /* ha volt valami */
+  }
+  .tooltip-text {
+    position: absolute;
+    display: block;
+    background-color: #003366;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    max-width: 200px;
+    word-break: keep-all;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  }
+  
+  /* Eltávolítottuk: hover/focusin vezérlést */
+  
+  .tooltip-text.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .tooltip-trigger.top .tooltip-text {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(18px);
+    margin-bottom: 6px;
+  }
+  
+  .tooltip-trigger.bottom .tooltip-text {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    margin-top: 6px;
+  }
+  
+  .tooltip-trigger.left .tooltip-text {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+    margin-right: 6px;
+  }
+  
+  .tooltip-trigger.right .tooltip-text {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    margin-left: 6px;
+  }

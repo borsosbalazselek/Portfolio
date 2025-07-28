@@ -1,0 +1,35 @@
+<header class="header" [class.shrunk]="isShrunk" [class.menu-open]="menuOpen">
+    <div class="container">
+      <div class="logo">AUTOROBOTTECH.HU</div>
+      <div class="hamburger" (click)="toggleMenu()" [class.active]="menuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Dropdown menü -->
+      <nav class="nav" [class.open]="menuOpen">
+        <div class="nav-inner">
+          <a herf="" class="nav-link" id="navhome1" (click)="scrollTo('home', $event)">{{ 'nav.home' | translate }}</a>
+          <a herf="" class="nav-link" id="navhome2" (click)="scrollTo('experience', $event)">{{ 'nav.experience' | translate }}</a>
+          <a herf="" class="nav-link" id="navhome3" (click)="scrollTo('education', $event)">{{ 'nav.education' | translate }}</a>
+          <a herf="" class="nav-link" id="navhome4" (click)="scrollTo('projects', $event)">{{ 'nav.projects' | translate }}</a>
+          <a herf="" class="nav-link" id="navhome5" (click)="scrollTo('contact', $event)">{{ 'nav.contact' | translate }}</a>
+          <a herf="" class="nav-link" id="navpages1" (click)="jumpTo('/home', $event)">{{ 'nav.home' | translate }}</a>
+          <a herf="" class="nav-link" id="navpages2" (click)="jumpTo('/experience', $event)">{{ 'nav.experience' | translate }}</a>
+          <a herf="" class="nav-link" id="navpages3" (click)="jumpTo('/education', $event)">{{ 'nav.education' | translate }}</a>
+          <a herf="" class="nav-link" id="navpages4" (click)="jumpTo('/projects', $event)">{{ 'nav.projects' | translate }}</a>
+          <a herf="" class="nav-link" id="navpages5" (click)="jumpTo('/contact', $event)">{{ 'nav.contact' | translate }}</a>
+          
+          <div class="nav-extras mobile-only">
+            <app-theme-toogle></app-theme-toogle>
+            <app-language-selector></app-language-selector>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="nav-extras desktop-only">
+                <app-theme-toogle></app-theme-toogle>
+        <app-language-selector></app-language-selector>
+      </div>
+    </div>
+  </header>

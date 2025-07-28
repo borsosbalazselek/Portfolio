@@ -1,0 +1,65 @@
+.footer {
+    background-color: #003366;
+    color: #f0f8ff;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+  }
+  
+  .footer-left {
+    font-size: 0.95rem;
+  }
+  
+  .footer-right a {
+    margin-left: 1rem;
+    color: #aee0ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .footer-right a i {
+    margin-right: 6px;
+    font-size: 1rem;
+  }
+  
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 1000px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .footer-right a {
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+  }
+  .footer-right a i {
+    margin-right: 6px;
+    font-size: 1.2rem;
+  }
+  
+  /* Mobilnézet: ikon-only megjelenítés */
+  @media (max-width: 600px) {
+
+  
+    .footer-label {
+      display: none;
+    }
+  
+
+
+
+  }

@@ -1,0 +1,18 @@
+<div class="intro-gallery-wrapper">
+    
+    <div class="gallery-image">
+      <img class="galeryimage" [src]="galleryImages[currentImageIndex]" alt="Galéria kép">
+    </div>
+
+    <div class="gallery-text">
+      <br>
+      <h2 class="header_h">{{ galleryTexts[currentImageIndex].title | translate}}</h2>
+      <br><br>
+      <p class="header_p">{{ galleryTexts[currentImageIndex].description1 | translate}}</p>
+      <br>
+      <p  class="header_p">{{ galleryTexts[currentImageIndex].description2 | translate}}</p>
+      <br>
+      <p  class="header_p">{{ galleryTexts[currentImageIndex].description3 | translate}}</p>
+    </div>
+
+  </div>

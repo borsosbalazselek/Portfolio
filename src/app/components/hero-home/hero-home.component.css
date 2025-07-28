@@ -1,0 +1,77 @@
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+  
+  .herotitle{
+    font-size: 50px;
+  }
+  
+  .hero-text {
+    flex: 0 0 60%;
+    min-width: 250px;
+  }
+  .mydescript{
+    font-weight: bold;
+    color: #0b3e70;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .hero-img {
+    flex: 0 0 30%;
+    min-width: 300px;
+    display: flex;
+    justify-content: center; /* legyen szebb középen */
+    align-items: center; /* vertikálisan is középre */
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0077cc, #78c8f9);
+    animation: pulseBorder 6s infinite alternate;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 8px 16px rgb(0, 0, 0);
+  }
+  
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+  
+  
+  
+  /* Pulzáló border */
+  @keyframes pulseBorder {
+    from {
+      box-shadow: 0 8px 12px rgb(0,0,0);
+    }
+    to {
+      box-shadow: 0 20px 25px rgb(0,0,0);
+    }
+  }
+  
+  /* Typed kurzor szín dark/light módban */
+  .typed-cursor {
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: #0077cc;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark-mode .typed-cursor {
+    color: #aee0ff;
+  }

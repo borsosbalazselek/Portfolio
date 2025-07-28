@@ -1,0 +1,25 @@
+<section id="experience">
+    <div class="experience-container">
+      <div class="experience-header">
+        <h2 class="h2">{{'experience.head' | translate }}</h2>
+        <p class="header_p">{{'experience.headtext' | translate }}</p>
+      </div>
+  
+      <div class="experience-list">
+        <div class="experience-card" *ngFor="let exp of experiences" data-aos="fade-right">
+          <h3>{{ exp.title | translate }}</h3>
+          <h4>{{ exp.company | translate }} | {{ exp.years }}</h4>
+          <p class="header_p">{{ exp.description1 | translate }}</p>
+          <p class="header_p">{{ exp.description2 | translate }}</p>
+          <p class="header_p">{{ exp.description3 | translate }}</p>
+          <div class="links">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="experience-button-container">
+        <a [routerLink]="['/experience']" class="experience-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+      </div>
+</section>
+  

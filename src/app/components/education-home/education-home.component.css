@@ -1,0 +1,121 @@
+/* ÚJ: Bővebben gomb középre */
+.education-button-container {
+    text-align: center;
+    margin-top: 3rem;
+    
+  }
+  
+  .education-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgb(0, 0, 0);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .education-btn:hover {
+    background-color: #005fa3;
+    transition: background-color 0.3s ease, transform 0.3s ease !important;
+    transform:  scale(1.10);
+  }
+
+  #education {
+    padding: 4rem 2rem;
+  }
+  
+  .education-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .education-header {
+    flex: 0 0 30%;
+    padding-right: 2rem;
+  }
+  
+  .education-header h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
+  }
+  
+  .education-header p {
+    font-size: 1.2rem;
+
+  }
+
+  .header_p {
+    color: #0b3e70;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .education-list {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .education-card {
+    background: #bddbff;
+    border: 1px solid #c0e2ff;
+    padding: 1.3rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgb(0, 0, 0);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .education-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .education-card h3 {
+    margin-bottom: 0.5rem;
+    font-weight:bold;
+  }
+  
+  .education-card h4 {
+    margin-bottom: 1rem;
+    color: #5f6e97;
+    font-weight: normal;
+  }
+  
+  .education-card p {
+    font-style: italic;
+  }
+  
+  /* ÚJ: Bővebben gomb középre */
+  .education-button-container {
+    text-align: center;
+    margin-top: 3rem;
+    
+  }
+  
+
+  /* Mobil optimalizálás */
+  @media (max-width: 900px) {
+    .education-container {
+      flex-direction: column-reverse;
+      padding: 2rem 1rem;
+    }
+    
+    .education-header, .education-list {
+      flex: 0 0 100%;
+      padding: 0;
+    }
+    
+    .education-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  }
+  

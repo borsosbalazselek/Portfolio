@@ -1,0 +1,21 @@
+<div class="hero" id="home">
+    <div class="hero-text">
+        <h1 class="herotitle">{{ 'home.title' | translate }}
+            <br>
+            {{ 'home.myname' | translate }}
+        </h1>
+        <h1>
+            <br>
+            <ngx-typed-js [strings]="typedStrings" [typeSpeed]="50" [backSpeed]="30" [loop]="true">
+                <span class="typing"></span>
+            </ngx-typed-js>
+            <br>
+        </h1>
+        <p class="mydescript">{{'home.mydes' | translate}}</p><br><p class="mydescript">{{'home.mydes1' | translate}}</p>
+    </div>
+    <div class="hero-img">
+        <div class="image-wrapper">
+            <img src="/assets/images/hero/selfpic.png" alt="Profilkép">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<h2>{{ 'projects.title' | translate }}</h2>
+
+<div class="projects-grid">
+  <div class="project-card" *ngFor="let project of projects; let i = index"  data-aos="zoom-in">
+    <img [src]="project.image" alt="Project image" (click)="openGallery(i, 0)">
+    <h3>{{ project.title | translate }}</h3>
+    <p class="header_p">{{ project.description | translate }}</p>
+    <div class="links">
+        <ng-container *ngIf="project.github">
+          <a [href]="project.github" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </ng-container>
+      
+        <ng-container *ngIf="project.video">
+          <a [href]="project.video" target="_blank">
+            <i class="fab fa-youtube"></i> Videó
+          </a>
+        </ng-container>
+      
+        <ng-container *ngIf="project.link">
+          <a [href]="project.link" target="_blank">
+            <i class="fas fa-link"></i> Projekt link
+          </a>
+        </ng-container>
+
+          <ng-container *ngIf="project.download">
+          <a [href]="project.download" download>
+            <i class="fas fa-download"></i> Letöltés
+          </a>
+        </ng-container>
+    </div>
+  </div>
+</div>
+<div class="project-button-container">
+    <a [routerLink]="['/projects']" class="project-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+  </div>
+  <div class="image-modal" *ngIf="galleryVisible" (click)="closeGallery()">
+  <img [src]="currentImage" class="image-fullscreen" (click)="$event.stopPropagation()" />
+  <button *ngIf="currentGallery.length > 1" class="nav-btn left" (click)="prevImage($event)">&#10094;</button>
+  <button *ngIf="currentGallery.length > 1" class="nav-btn right" (click)="nextImage($event)">&#10095;</button>
+</div>

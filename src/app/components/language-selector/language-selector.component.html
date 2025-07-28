@@ -1,0 +1,27 @@
+<app-tooltip #tt [text]="('languageselector.tooltip' | translate)" position="bottom">
+<div class="custom-lang-dropdown" (click)="openModal()">
+  <div class="selected-lang">
+    <img [src]="getFlag(currentLang)" alt="flag" class="selectimage"/>
+  </div>
+</div>
+</app-tooltip>
+<!-- Modal háttér -->
+<div class="modal-backdrop" *ngIf="modalOpen" (click)="closeModal()"></div>
+
+<!-- Modal ablak -->
+<div class="modal-lang" *ngIf="modalOpen">
+  
+  <!-- Bezáró X ikon -->
+  <button class="close-button" (click)="closeModal()">✖</button>
+
+  <h3 class="modal-title">{{'languageselector.selectlang' | translate }}</h3>
+
+  <div class="lang-option" 
+  *ngFor="let lang of languages; let i = index"
+  [ngStyle]="{'animation-delay': (i * 0.1) + 's'}"
+  (click)="switchLang(lang.code)">
+<img [src]="lang.flag" alt="flag" class="selectimage"/>
+<span>{{ lang.code.toUpperCase() }}</span> - {{ lang.desc | translate }}
+
+</div>
+</div>

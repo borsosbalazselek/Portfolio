@@ -1,0 +1,59 @@
+.theme-toggle {
+    margin: 0.5rem;
+  }
+.icon {
+    font-size: 1.2rem;
+    position: relative;
+    top: -3px;
+}
+
+  .theme-toggle {
+    margin: 0.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9rem;
+    padding: 6px 6px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .theme-toggle span {
+    display: inline-block;
+  animation: fadeRotate 0.4s ease;
+  transition: transform 0.4s ease;
+  }
+  
+  /* Hover glow */
+  .theme-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  .theme-toggle:hover .icon {
+    transform: scale(1.2) rotate(10deg); /* hover animáció */
+  }
+
+  
+
+  /* Animáció: kis forgás és áttűnés */
+  @keyframes fadeRotate {
+    0% {
+      opacity: 0;
+      transform: rotate(-180deg) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
+

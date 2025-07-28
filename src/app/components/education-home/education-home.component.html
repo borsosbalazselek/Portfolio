@@ -1,0 +1,24 @@
+<section id="education">
+  <div class="education-container">
+    <!-- ELŐSZÖR a LISTA, utána a HEADER -->
+    <div class="education-list">
+      <div class="education-card" *ngFor="let edu of educationList" data-aos="fade-left">
+        <h3>{{ edu.institution  | translate }}</h3>
+        <h4>{{ edu.years }} | {{ edu.degree  | translate }}</h4>
+        <p class="header_p">{{ edu.description  | translate }}</p>
+      </div>
+    </div>
+
+    <div class="education-header">
+      <h2 class="h2">{{ 'educations.head' | translate }}</h2>
+      <p class="header_p">
+        {{ 'educations.headtext' | translate }}
+      </p>
+    </div>
+  </div>
+
+  <div class="education-button-container">
+    <a [routerLink]="['/education']" class="education-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+  </div>
+</section>
+
