@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ThemeToogleComponent } from './components/theme-toogle/theme-toogle.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -23,10 +24,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({ declarations: [
         AppComponent,
         LanguageSelectorComponent,
-        FooterComponent,
         ScrollToTopComponent,
         ParticleBackgroundComponent,
         HeaderComponent,
+        FooterComponent,
         ThemeToogleComponent,
         TooltipComponent
     ],
