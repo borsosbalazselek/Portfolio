@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-contact-home',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './contact-home.component.html',
   styleUrl: './contact-home.component.css'
 })

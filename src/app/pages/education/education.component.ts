@@ -1,12 +1,15 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { EDUCATIONS,Education } from './education.data';
+import { CommonModule } from '@angular/common';
+import { TranslateModule,TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-education',
     templateUrl: './education.component.html',
     styleUrl: './education.component.css',
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, TranslateModule, RouterModule],
 })
 export class EducationComponent implements OnInit {
   selectedImage: string | null = null;
@@ -16,7 +19,7 @@ export class EducationComponent implements OnInit {
   currentIndex: number = 0;
   educationList: Education[] = EDUCATIONS;
   
-  constructor(private router: Router) {}
+  constructor(private router: Router,public translate: TranslateService) {}
 
   openGallery(eduIndex: number, imageIndex: number) {
     this.currentGallery = this.educationList[eduIndex].images;

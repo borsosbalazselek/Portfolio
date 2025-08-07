@@ -1,17 +1,17 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.css',
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, RouterModule, TranslateModule, FormsModule],
 })
 export class ContactComponent implements OnInit {
-  constructor(private router: Router) {}
-  navigateToProducts() {
-    this.router.navigate(['/contact']);
-  }
 
   ngOnInit(): void {
     this.showmenupage();

@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { PROJECTS, Project } from './projects.data';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-projects',
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.css',
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, TranslateModule, RouterModule],
 })
 export class ProjectsComponent implements OnInit {
   
@@ -15,10 +18,6 @@ currentGallery: string [] = [];
 currentIndex: number = 0;
 currentImage: string = '';
   
-  constructor(private router: Router) {}
-  navigateToProducts() {
-    this.router.navigate(['/projects']);
-  }
 
   ngOnInit(): void {
     this.showmenupage();

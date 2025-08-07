@@ -1,19 +1,20 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { EXPERIENCES, Experience } from './experience.data';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-experience',
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.css',
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, RouterModule, TranslateModule],
 })
 export class ExperienceComponent implements OnInit {
   
   experiences: Experience[] = EXPERIENCES;
   
-  constructor(private router: Router) {}
-
   ngOnInit(): void {
       this.showmenupage();
   }

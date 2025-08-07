@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects-home',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './projects-home.component.html',
   styleUrl: './projects-home.component.css'
 })

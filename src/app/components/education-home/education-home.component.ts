@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-education-home',
-  standalone: false,
+  standalone:  true,
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './education-home.component.html',
   styleUrl: './education-home.component.css'
 })

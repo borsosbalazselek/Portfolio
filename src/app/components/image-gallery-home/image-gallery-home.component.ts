@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-image-gallery-home',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './image-gallery-home.component.html',
   styleUrl: './image-gallery-home.component.css'
 })
