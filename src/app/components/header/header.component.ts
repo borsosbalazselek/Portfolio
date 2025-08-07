@@ -30,10 +30,15 @@ export class HeaderComponent {
     }, 300);
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isShrunk = window.scrollY > 60;
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  const scrollTop = window.scrollY;
+  if (!this.isShrunk && scrollTop > 60) {
+    this.isShrunk = true;
+  } else if (this.isShrunk && scrollTop < 30) {
+    this.isShrunk = false;
   }
+}
 
   scrollTo(sectionId: string, event: Event): void {
     event.preventDefault();

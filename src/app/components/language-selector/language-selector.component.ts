@@ -1,4 +1,4 @@
-import { Component, Input,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,28 +7,31 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './language-selector.component.html',
   styleUrl: './language-selector.component.css'
 })
-export class LanguageSelectorComponent {
+export class LanguageSelectorComponent implements OnInit {
   currentLang = 'hu';
   dropdownOpen = false;
   modalOpen = false;
 
-  constructor (private translate: TranslateService){}
-
-  isShrunk: boolean = false;
-  isDarkMode: boolean = false;
-
-
+  constructor(private translate: TranslateService) {}
 
   languages = [
-    { code: 'hu', flag: 'assets/flags/hu.png', desc:'languageselector.hu'  },
-    { code: 'en', flag: 'assets/flags/en.png', desc:'languageselector.en' }
+    { code: 'hu', flag: 'assets/flags/hu.png', desc: 'languageselector.hu' },
+    { code: 'en', flag: 'assets/flags/en.png', desc: 'languageselector.en' }
   ];
+
+  ngOnInit() {
+    const savedLang = localStorage.getItem('language');
+    if (savedLang && this.languages.find(l => l.code === savedLang)) {
+      this.currentLang = savedLang;
+      this.translate.use(savedLang);
+    } else {
+      this.translate.use(this.currentLang); // alapértelmezett hu
+    }
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
-
-
 
   openModal() {
     this.modalOpen = true;
@@ -40,8 +43,9 @@ export class LanguageSelectorComponent {
 
   switchLang(langCode: string) {
     this.currentLang = langCode;
-    this.closeModal(); // a váltás után bezárjuk
+    localStorage.setItem('language', langCode);
     this.translate.use(langCode);
+    this.closeModal();
   }
 
   getFlag(langCode: string): string {
@@ -49,4 +53,3 @@ export class LanguageSelectorComponent {
     return lang ? lang.flag : '';
   }
 }
-

@@ -1,61 +1,62 @@
 <section id="contact">
-  <div class="contact-infos">
-      <h2 class="contact-title">{{ 'contact.title' | translate }}</h2>
-      <div class="contact-wrapper">
-          <div class="contact-info">
-              <p><strong>{{ 'contact.email' | translate }}: </strong><a class="header_p" href="mailto:borsosbalazs1979@gmail.com">{{ 'contact.emailhome' | translate }}</a></p>
-              <p><strong>{{ 'contact.phone' | translate }}: </strong><a class="header_p">{{ 'contact.phonehome' | translate }}</a></p>
-              <p><strong>{{ 'contact.address' | translate }}: </strong><a class="header_p">{{ 'contact.addresshome' | translate }}</a></p>
-          </div>
-
-          <div class="contact-links">
-              <a href="https://github.com/borsosbalazselek" target="_blank">
-              <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/balazs-borsos-6b668721b" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn
-              </a>
-              <a href="https://www.youtube.com/@balazsborsos1171" target="_blank">
-              <i class="fab fa-youtube"></i> YouTube
-              </a>
-              <a href="https://www.facebook.com/borsosbalazselek" target="_blank">
-              <i class="fab fa-facebook"></i> Facebook
-              </a>
-          </div>
-      </div>
-  </div>
-  <div class="contact-container">
-    <!-- BAL OLDAL: Header + Kontaktpanel -->
-    <div class="contact-left">
-      <div class="contactform-wrapper">
-          <form class="contact-form" (ngSubmit)="onSubmit()" #formRef="ngForm">
-              <p class="writemehead">{{ 'contact.writetome' | translate }}</p>
-              <label for="name" ><p class="header_p">{{ 'contact.name' | translate }}</p></label>
-              <input id="name" name="name" type="text" required ngModel>
-            
-              <label for="email"><p class="header_p">{{ 'contact.email' | translate }}</p></label>
-              <input id="email" name="email" type="email" required ngModel>
-            
-              <label for="message"><p class="header_p">{{ 'contact.message' | translate }}</p></label>
-              <textarea id="message" name="message" rows="5" required ngModel></textarea>
-            
-              <button type="submit">{{ 'contact.send' | translate }}</button>
-            </form>
+  <div class="main-wrapper">
+    <div class="contact-infos">
+        <h2 class="contact-title">{{ 'contact.title' | translate }}</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p><strong>{{ 'contact.email' | translate }}: </strong><a class="header_p" href="mailto:borsosbalazs1979@gmail.com">{{ 'contact.emailhome' | translate }}</a></p>
+                <p><strong>{{ 'contact.phone' | translate }}: </strong><a class="header_p">{{ 'contact.phonehome' | translate }}</a></p>
+                <p><strong>{{ 'contact.address' | translate }}: </strong><a class="header_p">{{ 'contact.addresshome' | translate }}</a></p>
             </div>
+
+            <div class="contact-links">
+                <a href="https://github.com/borsosbalazselek" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/balazs-borsos-6b668721b" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://www.youtube.com/@balazsborsos1171" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://www.facebook.com/borsos.balazs.1" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="contact-container">
+      <!-- BAL OLDAL: Header + Kontaktpanel -->
+      <div class="contact-left">
+        <div class="contactform-wrapper">
+            <form class="contact-form" (ngSubmit)="onSubmit()" #formRef="ngForm">
+                <p class="writemehead">{{ 'contact.writetome' | translate }}</p>
+                <label for="name" ><p class="header_p">{{ 'contact.name' | translate }}</p></label>
+                <input id="name" name="name" type="text" required ngModel>
+              
+                <label for="email"><p class="header_p">{{ 'contact.email' | translate }}</p></label>
+                <input id="email" name="email" type="email" required ngModel>
+              
+                <label for="message"><p class="header_p">{{ 'contact.message' | translate }}</p></label>
+                <textarea id="message" name="message" rows="5" required ngModel></textarea>
+              
+                <button type="submit">{{ 'contact.send' | translate }}</button>
+              </form>
+              </div>
+      </div>
+
+      <!-- JOBB OLDAL: Térkép -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Debrecen,+Hungary&output=embed"
+          width="570" height="570" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
     </div>
 
-    <!-- JOBB OLDAL: Térkép -->
-    <div class="contact-map">
-      <iframe
-        src="https://www.google.com/maps?q=Debrecen,+Hungary&output=embed"
-        width="570" height="570" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
+    <div class="contact-button-container">
+      <a [routerLink]="['/home']" class="contact-btn" (click)="showmenupage()">{{ 'buttons.home' | translate }}</a>
     </div>
-
   </div>
-
-  <div class="contact-button-container">
-    <a [routerLink]="['/home']" class="contact-btn" (click)="showmenupage()">{{ 'buttons.home' | translate }}</a>
-  </div>
-
 </section>

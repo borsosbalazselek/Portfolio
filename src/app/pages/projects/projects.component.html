@@ -1,4 +1,4 @@
-<h2>{{ 'projects.title' | translate }}</h2>
+<h2 class="projecttitle">{{ 'projects.title' | translate }}</h2>
 
 <div class="projects-grid">
   <div class="project-card" *ngFor="let project of projects; let i = index"  data-aos="zoom-in">
@@ -32,8 +32,9 @@
     </div>
   </div>
 </div>
+
 <div class="project-button-container">
-    <a [routerLink]="['/projects']" class="project-btn" (click)="showmenupage()">{{ 'buttons.more' | translate }}</a>
+    <a [routerLink]="['/home']" class="project-btn" (click)="showmenupage()">{{ 'buttons.home' | translate }}</a>
   </div>
   <div class="image-modal" *ngIf="galleryVisible" (click)="closeGallery()">
   <img [src]="currentImage" class="image-fullscreen" (click)="$event.stopPropagation()" />
