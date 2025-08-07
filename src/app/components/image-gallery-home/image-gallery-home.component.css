@@ -1,7 +1,7 @@
 
 .intro-gallery-wrapper {
     display: flex;
-  
+  overflow-x: hidden;
     flex-wrap: wrap;
     gap: 4rem;
   }

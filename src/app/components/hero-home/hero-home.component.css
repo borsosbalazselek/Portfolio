@@ -75,3 +75,37 @@
   body.dark-mode .typed-cursor {
     color: #aee0ff;
   }
+
+  @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .hero-img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .herotitle {
+    font-size: 32px; /* kisebb betűméret mobilon */
+  }
+
+  .mydescript {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .herotitle {
+    font-size: 24px;
+  }
+}

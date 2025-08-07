@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -12,7 +12,7 @@ export class LanguageSelectorComponent implements OnInit {
   dropdownOpen = false;
   modalOpen = false;
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private cdr: ChangeDetectorRef) {}
 
   languages = [
     { code: 'hu', flag: 'assets/flags/hu.png', desc: 'languageselector.hu' },
@@ -27,6 +27,10 @@ export class LanguageSelectorComponent implements OnInit {
     } else {
       this.translate.use(this.currentLang); // alapértelmezett hu
     }
+
+    this.translate.onLangChange.subscribe(() => {
+      this.cdr.detectChanges();
+    });
   }
 
   toggleDropdown() {
@@ -44,7 +48,9 @@ export class LanguageSelectorComponent implements OnInit {
   switchLang(langCode: string) {
     this.currentLang = langCode;
     localStorage.setItem('language', langCode);
-    this.translate.use(langCode);
+        this.translate.use(langCode).subscribe(() => {
+      this.cdr.detectChanges(); // 👈 Ezzel frissül mobilon is a template
+    });
     this.closeModal();
   }
 

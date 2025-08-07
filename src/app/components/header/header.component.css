@@ -230,7 +230,7 @@
 
   
   /* Mobilbarát mód */
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     .hamburger {
         display: flex;
       }
